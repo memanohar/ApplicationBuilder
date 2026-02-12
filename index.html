@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Website Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="navbar-flex">
+                <div class="logo">
+                    <h1>⚡ AI Website Generator</h1>
+                    <p class="tagline">Build Full-Stack Websites with AI</p>
+                </div>
+                <nav class="nav">
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#generator">Generator</a>
+                </nav>
+                <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle dark/light mode">🌗</button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Turn Your Ideas Into Websites</h2>
+                <p class="hero-subtitle">Describe what you want, and AI generates production-ready code in seconds</p>
+                <a href="#generator" class="cta-button">Start Building →</a>
+            </div>
+            <div class="hero-image">
+                <div class="code-preview">
+                    <div class="code-header">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="code-content">
+                        <code>&lt;div class="website"&gt;</code><br>
+                        <code>&nbsp;&nbsp;AI Generated Code</code><br>
+                        <code>&lt;/div&gt;</code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features">
+            <h2 class="section-title">Powerful Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Beautiful UI</h3>
+                    <p>Generates modern, responsive designs that work on all devices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚙️</div>
+                    <h3>Full-Stack Code</h3>
+                    <p>Frontend + Backend + Database schemas all generated together</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Production Ready</h3>
+                    <p>Clean, documented code following best practices</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Iterative</h3>
+                    <p>Refine and improve your project with simple commands</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="how-it-works">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Describe Your Project</h3>
+                    <p>Tell the AI what you want to build in plain English</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Generates Code</h3>
+                    <p>Multi-stage pipeline creates complete application</p>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Download & Deploy</h3>
+                    <p>Get your code and deploy to any hosting platform</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Generator Section -->
+        <section id="generator" class="generator">
+            <h2 class="section-title">Generate Your Website</h2>
+            <div class="generator-container codegen-split-panel">
+                <!-- Input Panel -->
+                <div class="input-panel">
+                    <div class="form-group">
+                        <label for="projectName">Project Name</label>
+                        <input type="text" id="projectName" placeholder="My Awesome Website" class="input-field">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" class="input-field">
+                            <option value="landing">Landing Page</option>
+                            <option value="saas">SaaS Dashboard</option>
+                            <option value="ecommerce">E-commerce Store</option>
+                            <option value="blog">Blog Platform</option>
+                            <option value="portfolio">Portfolio Site</option>
+                            <option value="custom">Custom Project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Detailed Description</label>
+                        <textarea id="description" class="input-field textarea" rows="6" 
+                            placeholder="Describe your project in detail:
+- What features do you need?
+- What should it look like?
+- Any specific functionality?
+
+Example: Create an e-commerce store for handmade jewelry. Include product listings, shopping cart, checkout process, and an admin panel to manage inventory."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Tech Stack</label>
+                        <div class="tech-stack">
+                            <label class="checkbox-label"><input type="checkbox" value="react" checked> React</label>
+                            <label class="checkbox-label"><input type="checkbox" value="node"> Node.js Backend</label>
+                            <label class="checkbox-label"><input type="checkbox" value="database"> Database</label>
+                            <label class="checkbox-label"><input type="checkbox" value="auth"> Authentication</label>
+                        </div>
+                    </div>
+                    <button id="generateBtn" type="button" class="generate-button">
+                        <span class="button-text">✨ Generate Website</span>
+                        <span class="button-loader" style="display: none;">
+                            <span class="spinner"></span> Generating...
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Output Panel -->
+                <div class="output-right-panel">
+                    <div id="outputPanel" class="output-panel">
+                        <div class="output-header">
+                            <h3>Generated Code</h3>
+                            <div class="output-header-actions">
+                                <button id="downloadBtn" class="download-button">📥 Download All Files</button>
+                                <button id="deployBtn" class="deploy-button">🚀 Deploy to Netlify</button>
+                                <button id="addFeatureBtn" class="feature-button">➕ Add Feature</button>
+                            </div>
+                        </div>
+                        <div class="tabs">
+                            <button class="tab-button active" data-tab="html">HTML</button>
+                            <button class="tab-button" data-tab="css">CSS</button>
+                            <button class="tab-button" data-tab="js">JavaScript</button>
+                            <button class="tab-button" data-tab="backend">Backend</button>
+                            <button class="tab-button" data-tab="preview">Preview</button>
+                        </div>
+                        <div class="tab-content active" id="html-tab">
+                            <div class="code-toolbar">
+                                <span class="file-name">index.html</span>
+                                <button class="copy-button" data-target="html-code">Copy</button>
+                            </div>
+                            <pre><code id="html-code" class="language-html">// Your website code will appear here...</code></pre>
+                        </div>
+                        <div class="tab-content" id="css-tab">
+                            <div class="code-toolbar">
+                                <span class="file-name">style.css</span>
+                                <button class="copy-button" data-target="css-code">Copy</button>
+                            </div>
+                            <pre><code id="css-code" class="language-css">/* Your CSS will appear here... */</code></pre>
+                        </div>
+                        <div class="tab-content" id="js-tab">
+                            <div class="code-toolbar">
+                                <span class="file-name">app.js</span>
+                                <button class="copy-button" data-target="js-code">Copy</button>
+                            </div>
+                            <pre><code id="js-code" class="language-javascript">// Your JS will appear here...</code></pre>
+                        </div>
+                        <div class="tab-content" id="backend-tab">
+                            <div class="code-toolbar">
+                                <span class="file-name">server.py</span>
+                                <button class="copy-button" data-target="backend-code">Copy</button>
+                            </div>
+                            <pre><code id="backend-code" class="language-python"># Backend code will appear here...</code></pre>
+                        </div>
+                        <div class="tab-content" id="preview-tab">
+                            <iframe id="preview-frame" class="preview-frame">Your website will appear here...</iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Built with AI • Learn More on <a href="#">GitHub</a></p>
+        </footer>
+    </div>
+
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-html.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
